@@ -7,7 +7,7 @@ import re
 with open('hotline1.txt', 'r', encoding='utf-8') as file:
     text = file.read()
 
-phon = re.findall('\d\(\d{3}\)\d{3}-\d{2}-\d{2}', ''.join(text))
+phon = re.findall(r'\d\(\d{3}\)\d{3}-\d{2}-\d{2}', ''.join(text))
 print(f'Количество номеров, соответсвующих шаблону - {len(phon)}')
 final_data = re.sub('Горячая линия', "Горячая линия Министерства образования Ростовской области", ''.join(text))
 
